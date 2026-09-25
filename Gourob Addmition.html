@@ -1,0 +1,3368 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gourob Coaching Center | Khargram</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --green:#073b2a;
+    --green2:#0b6b4b;
+    --dark:#052c20;
+    --gold:#f4c542;
+    --light:#f3f8f5;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#667085;
+    --shadow:0 12px 35px rgba(0,0,0,.09);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7faf8;
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    background:var(--dark);
+    color:white;
+    padding:8px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.topbar span{
+    margin-right:20px;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:5000;
+
+    background:rgba(255,255,255,.97);
+
+    padding:13px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 3px 20px rgba(0,0,0,.09);
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:var(--green);
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--green);
+    color:white;
+
+    border-radius:50%;
+
+    box-shadow:0 5px 15px rgba(7,59,42,.25);
+
+    font-size:22px;
+}
+
+.logo span{
+    color:var(--green2);
+}
+
+nav ul{
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+
+    gap:4px;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li>a{
+    display:block;
+
+    color:#263238;
+
+    padding:9px 12px;
+
+    border-radius:7px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.25s;
+}
+
+nav ul li>a:hover{
+    color:var(--green2);
+    background:#edf7f2;
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.dropdown-menu{
+    position:absolute;
+
+    top:100%;
+    left:50%;
+
+    transform:translate(-50%,10px);
+
+    min-width:225px;
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:8px 0;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.16);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s;
+
+    z-index:6000;
+}
+
+.dropdown-menu:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:var(--gold);
+
+    border-radius:10px 10px 0 0;
+}
+
+.dropdown-menu a{
+    display:block;
+
+    padding:11px 19px;
+
+    color:#172033;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.dropdown-menu a:hover{
+    background:#edf7f2;
+
+    color:var(--green2);
+
+    padding-left:26px;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translate(-50%,0);
+}
+
+.apply-btn{
+    background:var(--green2)!important;
+
+    color:white!important;
+
+    padding:10px 18px!important;
+
+    border-radius:30px!important;
+
+    margin-left:6px;
+}
+
+.apply-btn:hover{
+    background:var(--green)!important;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:88vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:50px 7%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(3,44,31,.90),
+        rgba(7,59,42,.72)
+    ),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1900&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.hero:after{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border:1px solid rgba(244,197,66,.25);
+
+    border-radius:50%;
+
+    right:-200px;
+    bottom:-250px;
+}
+
+.hero-content{
+    max-width:950px;
+
+    position:relative;
+
+    z-index:2;
+
+    animation:heroIn 1s ease;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:60px;
+
+    line-height:1.08;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:720px;
+
+    margin:0 auto 30px;
+
+    font-size:19px;
+
+    opacity:.95;
+}
+
+.hero-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--gold);
+
+    color:#173322;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.btn-light{
+    background:white;
+
+    color:var(--green);
+}
+
+.btn-light:hover{
+    transform:translateY(-4px);
+}
+
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
+.notice{
+    background:var(--gold);
+
+    color:#172033;
+
+    overflow:hidden;
+
+    padding:10px 0;
+
+    font-weight:700;
+}
+
+.notice-track{
+    white-space:nowrap;
+
+    display:inline-block;
+
+    animation:notice 22s linear infinite;
+}
+
+@keyframes notice{
+
+    from{
+        transform:translateX(100%);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+section{
+    padding:85px 7%;
+}
+
+.heading{
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.heading small{
+    color:var(--green2);
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.heading h2{
+    color:var(--green);
+
+    font-size:39px;
+
+    margin:7px 0;
+}
+
+.heading p{
+    max-width:720px;
+
+    margin:auto;
+
+    color:var(--muted);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-wrap{
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.about-photo{
+    min-height:390px;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        rgba(7,59,42,.18),
+        rgba(7,59,42,.18)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1100&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+}
+
+.about-photo:hover{
+    transform:scale(1.02);
+}
+
+.about-text h3{
+    font-size:31px;
+
+    color:var(--green);
+
+    margin-bottom:15px;
+}
+
+.about-text p{
+    color:var(--muted);
+
+    margin-bottom:15px;
+}
+
+.check-list{
+    list-style:none;
+
+    margin-top:20px;
+}
+
+.check-list li{
+    margin:10px 0;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.feature-section{
+    background:var(--light);
+}
+
+.feature-grid{
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+}
+
+.feature{
+    background:white;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:17px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+}
+
+.feature-icon{
+    font-size:42px;
+
+    margin-bottom:12px;
+}
+
+.feature h3{
+    color:var(--green);
+
+    margin-bottom:7px;
+}
+
+.feature p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   COURSES
+===================================================== */
+
+.course-grid{
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.course{
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    border-top:4px solid var(--green2);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.course:hover{
+    transform:translateY(-9px);
+
+    box-shadow:var(--shadow);
+}
+
+.course-icon{
+    width:62px;
+    height:62px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#edf7f2;
+
+    border-radius:15px;
+
+    font-size:32px;
+
+    margin-bottom:18px;
+}
+
+.course h3{
+    color:var(--green);
+
+    margin-bottom:8px;
+}
+
+.course p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin-bottom:15px;
+}
+
+.course-link{
+    color:var(--green2);
+
+    font-weight:800;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+    background:var(--green);
+
+    color:white;
+
+    padding:55px 7%;
+}
+
+.stats-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    text-align:center;
+}
+
+.stat{
+    padding:10px;
+}
+
+.stat h2{
+    color:var(--gold);
+
+    font-size:42px;
+}
+
+.stat p{
+    opacity:.85;
+}
+
+
+/* =====================================================
+   NOTICE BOARD
+===================================================== */
+
+.notice-section{
+    background:#f7faf8;
+}
+
+.notice-board{
+    max-width:1000px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.notice-head{
+    background:var(--green);
+
+    color:white;
+
+    padding:18px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.notice-head h3{
+    font-size:20px;
+}
+
+.notice-item{
+    display:flex;
+
+    gap:18px;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    border-bottom:1px solid #eee;
+}
+
+.notice-date{
+    min-width:65px;
+
+    text-align:center;
+
+    background:#edf7f2;
+
+    color:var(--green2);
+
+    padding:7px;
+
+    border-radius:8px;
+
+    font-weight:800;
+
+    font-size:13px;
+}
+
+.notice-item:last-child{
+    border-bottom:none;
+}
+
+
+/* =====================================================
+   TEACHERS
+===================================================== */
+
+.teacher-section{
+    background:var(--light);
+}
+
+.teacher-grid{
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.teacher{
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.teacher:hover{
+    transform:translateY(-7px);
+}
+
+.teacher-photo{
+    height:210px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #073b2a,
+        #0b6b4b
+    );
+
+    color:white;
+
+    font-size:75px;
+}
+
+.teacher-info{
+    padding:22px;
+}
+
+.teacher-info h3{
+    color:var(--green);
+
+    margin-bottom:5px;
+}
+
+.teacher-info p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   ROUTINE
+===================================================== */
+
+.routine-table{
+    max-width:1000px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:auto;
+
+    box-shadow:var(--shadow);
+}
+
+.routine-table table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:700px;
+}
+
+.routine-table th{
+    background:var(--green);
+
+    color:white;
+
+    padding:15px;
+}
+
+.routine-table td{
+    padding:14px;
+
+    border-bottom:1px solid #eee;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   ADMISSION
+===================================================== */
+
+.admission-section{
+    background:var(--light);
+}
+
+.admission{
+    max-width:920px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:42px;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+}
+
+.form-title{
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.form-title h3{
+    color:var(--green);
+
+    font-size:26px;
+}
+
+.form-title p{
+    color:var(--muted);
+}
+
+.row{
+    display:flex;
+
+    gap:20px;
+}
+
+.field{
+    flex:1;
+
+    margin-bottom:19px;
+}
+
+label{
+    display:block;
+
+    font-weight:700;
+
+    margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid #d5dbe0;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--green2);
+
+    box-shadow:0 0 0 3px rgba(11,107,75,.1);
+}
+
+textarea{
+    height:105px;
+
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--green2);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.submit:hover{
+    background:var(--green);
+
+    transform:translateY(-2px);
+}
+
+#success{
+    display:none;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    background:#dcfce7;
+
+    color:#166534;
+}
+
+
+/* =====================================================
+   ADMISSION INFO
+===================================================== */
+
+.info-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.info-box{
+    background:#f7faf8;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:12px;
+}
+
+.info-box h4{
+    color:var(--green);
+
+    margin-bottom:5px;
+}
+
+.info-box p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+}
+
+.gallery-item{
+    height:210px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#ddd;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-caption{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:15px;
+
+    color:white;
+
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.testimonial-section{
+    background:var(--light);
+}
+
+.testimonial-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+}
+
+.testimonial{
+    background:white;
+
+    padding:28px;
+
+    border-radius:17px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.stars{
+    color:#f4b400;
+
+    margin-bottom:10px;
+}
+
+.testimonial p{
+    color:var(--muted);
+
+    font-style:italic;
+
+    margin-bottom:15px;
+}
+
+.testimonial h4{
+    color:var(--green);
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq{
+    max-width:900px;
+
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.faq-question{
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    padding:18px 20px;
+
+    text-align:left;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.faq-answer{
+    display:none;
+
+    padding:0 20px 18px;
+
+    color:var(--muted);
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+.faq-item.active .faq-question{
+    color:var(--green2);
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-section{
+    background:var(--light);
+}
+
+.contact-grid{
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.contact-box{
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.contact-box:hover{
+    transform:translateY(-6px);
+}
+
+.contact-icon{
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.contact-box h3{
+    color:var(--green);
+
+    margin-bottom:7px;
+}
+
+.contact-box p{
+    color:var(--muted);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--dark);
+
+    color:white;
+
+    padding:45px 7% 20px;
+}
+
+.footer-grid{
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:45px;
+}
+
+.footer-logo{
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.footer-logo span{
+    color:var(--gold);
+}
+
+footer p{
+    color:#cbd5d1;
+
+    font-size:14px;
+}
+
+footer h3{
+    color:var(--gold);
+
+    margin-bottom:12px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:7px 0;
+}
+
+.footer-links a{
+    color:#cbd5d1;
+
+    font-size:14px;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    color:#cbd5d1;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   FLOATING BUTTONS
+===================================================== */
+
+.floating{
+    position:fixed;
+
+    right:18px;
+
+    bottom:18px;
+
+    z-index:4000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.float-btn{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:22px;
+
+    box-shadow:0 7px 20px rgba(0,0,0,.2);
+
+    transition:.3s;
+}
+
+.float-btn:hover{
+    transform:scale(1.1);
+}
+
+.call{
+    background:#0b6b4b;
+}
+
+.whatsapp{
+    background:#20b858;
+}
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#topBtn{
+    position:fixed;
+
+    right:20px;
+    bottom:145px;
+
+    width:43px;
+    height:43px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#173322;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:3000;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .course-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .topbar{
+        display:none;
+    }
+
+    nav{
+        padding:12px 4%;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    nav ul li>a{
+        padding:7px 8px;
+
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .about-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .teacher-grid,
+    .testimonial-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    nav{
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    nav ul{
+        width:100%;
+    }
+
+    .dropdown-menu{
+        position:static;
+
+        transform:none;
+
+        width:100%;
+
+        display:none;
+
+        opacity:1;
+
+        visibility:visible;
+
+        box-shadow:none;
+
+        background:#f5faf7;
+
+        text-align:center;
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display:block;
+
+        transform:none;
+    }
+
+    .hero{
+        min-height:75vh;
+
+        padding:40px 5%;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:65px 5%;
+    }
+
+    .heading h2{
+        font-size:30px;
+    }
+
+    .feature-grid,
+    .course-grid,
+    .gallery,
+    .stats-grid,
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        flex-direction:column;
+
+        gap:0;
+    }
+
+    .admission{
+        padding:25px 18px;
+    }
+
+    .gallery-item{
+        height:230px;
+    }
+
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection{
+    background:var(--gold);
+
+    color:var(--green);
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+<div>
+<span>📍 Khargram, Murshidabad</span>
+<span>🎓 Quality Education</span>
+</div>
+
+<div>
+<span>📞 8348813875</span>
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-icon">
+🎓
+</div>
+
+<div>
+Gourob
+<span>Coaching Center</span>
+</div>
+
+</div>
+
+
+<ul>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+
+<li class="dropdown">
+
+<a href="#about">
+About ▾
+</a>
+
+<div class="dropdown-menu">
+
+<a href="#about">About Us</a>
+
+<a href="#mission">Our Mission</a>
+
+<a href="#why">Why Choose Us</a>
+
+<a href="#teachers">Our Teachers</a>
+
+</div>
+
+</li>
+
+
+<li class="dropdown">
+
+<a href="#courses">
+Courses ▾
+</a>
+
+<div class="dropdown-menu">
+
+<a href="#courses">All Courses</a>
+
+<a href="#math">Mathematics</a>
+
+<a href="#physical">Physical Science</a>
+
+<a href="#life">Life Science</a>
+
+<a href="#english">English</a>
+
+<a href="#bengali">Bengali</a>
+
+</div>
+
+</li>
+
+
+<li class="dropdown">
+
+<a href="#admission">
+Admission ▾
+</a>
+
+<div class="dropdown-menu">
+
+<a href="#admission">Online Admission</a>
+
+<a href="#eligibility">Eligibility</a>
+
+<a href="#fees">Course Fees</a>
+
+<a href="#documents">Documents</a>
+
+</div>
+
+</li>
+
+
+<li class="dropdown">
+
+<a href="#contact">
+Contact ▾
+</a>
+
+<div class="dropdown-menu">
+
+<a href="#contact">Contact Us</a>
+
+<a href="#location">Location</a>
+
+<a href="#phone">Phone</a>
+
+<a href="#help">Admission Help</a>
+
+</div>
+
+</li>
+
+
+<li>
+
+<a class="apply-btn" href="#admission">
+Apply Now
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+🎓 Welcome to Gourob Coaching Center
+</div>
+
+<h1>
+Learn Today.
+<br>
+<span>Lead Tomorrow.</span>
+</h1>
+
+<p>
+Build strong concepts, practice regularly and develop
+the confidence to achieve your academic goals.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#admission" class="btn btn-primary">
+📝 Apply for Admission
+</a>
+
+<a href="#courses" class="btn btn-light">
+📚 Explore Courses
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE TICKER
+===================================================== -->
+
+<div class="notice">
+
+<div class="notice-track">
+
+📢 Admission Open 2026 • Classes V–XII • Mathematics • Physical Science • Life Science • English • Bengali • Call 8348813875 • Apply Now
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="heading">
+
+<small>Who We Are</small>
+
+<h2>About Gourob Coaching Center</h2>
+
+<p>
+A focused and student-friendly coaching environment
+for better learning and academic development.
+</p>
+
+</div>
+
+
+<div class="about-wrap">
+
+<div class="about-photo"></div>
+
+
+<div class="about-text">
+
+<h3>
+Education With Care
+</h3>
+
+<p>
+Welcome to <b>Gourob Coaching Center</b>,
+Khargram, Murshidabad.
+</p>
+
+<p>
+Our aim is to help students understand concepts clearly,
+practice regularly and improve their confidence step by step.
+</p>
+
+<ul class="check-list">
+
+<li>✅ Concept-based learning</li>
+
+<li>✅ Regular practice</li>
+
+<li>✅ Academic guidance</li>
+
+<li>✅ Friendly learning environment</li>
+
+<li>✅ Student-focused support</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="feature-section" id="mission">
+
+<div class="heading">
+
+<small>Our Mission</small>
+
+<h2>Why Students Choose Us</h2>
+
+<p>
+Our approach focuses on understanding, practice and continuous improvement.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎯
+</div>
+
+<h3>Clear Concepts</h3>
+
+<p>
+Simple explanations to make difficult topics easier to understand.
+</p>
+
+</div>
+
+
+<div class="feature" id="why">
+
+<div class="feature-icon">
+📚
+</div>
+
+<h3>Regular Practice</h3>
+
+<p>
+Practice helps students strengthen their academic fundamentals.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+👨‍🏫
+</div>
+
+<h3>Guidance</h3>
+
+<p>
+Support and academic guidance in a friendly environment.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📈
+</div>
+
+<h3>Progress</h3>
+
+<p>
+Encouraging students to improve step by step.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COURSES
+===================================================== -->
+
+<section id="courses">
+
+<div class="heading">
+
+<small>Our Courses</small>
+
+<h2>Subjects We Teach</h2>
+
+<p>
+Choose a subject or select complete academic support.
+</p>
+
+</div>
+
+
+<div class="course-grid">
+
+
+<div class="course" id="math">
+
+<div class="course-icon">📐</div>
+
+<h3>Mathematics</h3>
+
+<p>
+Concepts, formulas, problem solving and practice.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for Mathematics →
+</a>
+
+</div>
+
+
+<div class="course" id="physical">
+
+<div class="course-icon">⚛️</div>
+
+<h3>Physical Science</h3>
+
+<p>
+Important concepts explained with examples and practice.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for Physical Science →
+</a>
+
+</div>
+
+
+<div class="course" id="life">
+
+<div class="course-icon">🧬</div>
+
+<h3>Life Science</h3>
+
+<p>
+Biology and life science topics explained simply.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for Life Science →
+</a>
+
+</div>
+
+
+<div class="course" id="english">
+
+<div class="course-icon">📖</div>
+
+<h3>English</h3>
+
+<p>
+Grammar, writing, reading and communication practice.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for English →
+</a>
+
+</div>
+
+
+<div class="course" id="bengali">
+
+<div class="course-icon">✍️</div>
+
+<h3>Bengali</h3>
+
+<p>
+Language, grammar, literature and writing practice.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for Bengali →
+</a>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">🎓</div>
+
+<h3>All Subjects</h3>
+
+<p>
+Complete academic support for students.
+</p>
+
+<a class="course-link" href="#admission">
+Apply for All Subjects →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<h2>6+</h2>
+
+<p>Subjects</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>V–XII</h2>
+
+<p>Classes</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>2026</h2>
+
+<p>Academic Session</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>100%</h2>
+
+<p>Learning Focus</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE BOARD
+===================================================== -->
+
+<section class="notice-section">
+
+<div class="heading">
+
+<small>Latest Updates</small>
+
+<h2>Notice Board</h2>
+
+<p>
+Important announcements and admission information.
+</p>
+
+</div>
+
+
+<div class="notice-board">
+
+<div class="notice-head">
+
+<h3>📢 Latest Notices</h3>
+
+<span>2026</span>
+
+</div>
+
+
+<div class="notice-item">
+
+<div class="notice-date">
+2026
+</div>
+
+<div>
+
+<b>Online Admission Open</b>
+
+<p>
+Students can submit admission enquiries online.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="notice-item">
+
+<div class="notice-date">
+NEW
+</div>
+
+<div>
+
+<b>Classes V to XII</b>
+
+<p>
+Academic support available for selected classes.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="notice-item">
+
+<div class="notice-date">
+INFO
+</div>
+
+<div>
+
+<b>Admission Enquiry</b>
+
+<p>
+Call 8348813875 for admission information.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TEACHERS
+===================================================== -->
+
+<section class="teacher-section" id="teachers">
+
+<div class="heading">
+
+<small>Our Faculty</small>
+
+<h2>Meet Our Teachers</h2>
+
+<p>
+Experienced guidance and a student-friendly learning approach.
+</p>
+
+</div>
+
+
+<div class="teacher-grid">
+
+
+<div class="teacher">
+
+<div class="teacher-photo">
+👨‍🏫
+</div>
+
+<div class="teacher-info">
+
+<h3>Subject Teacher</h3>
+
+<p>
+Mathematics & Academic Guidance
+</p>
+
+</div>
+
+</div>
+
+
+<div class="teacher">
+
+<div class="teacher-photo">
+👩‍🏫
+</div>
+
+<div class="teacher-info">
+
+<h3>Subject Teacher</h3>
+
+<p>
+Science & Academic Support
+</p>
+
+</div>
+
+</div>
+
+
+<div class="teacher">
+
+<div class="teacher-photo">
+👨‍🏫
+</div>
+
+<div class="teacher-info">
+
+<h3>Subject Teacher</h3>
+
+<p>
+English & Bengali
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CLASS ROUTINE
+===================================================== -->
+
+<section>
+
+<div class="heading">
+
+<small>Schedule</small>
+
+<h2>Sample Class Routine</h2>
+
+<p>
+A sample timetable section for the website.
+</p>
+
+</div>
+
+
+<div class="routine-table">
+
+<table>
+
+<tr>
+
+<th>Day</th>
+
+<th>Class V–VI</th>
+
+<th>Class VII–VIII</th>
+
+<th>Class IX–X</th>
+
+<th>Class XI–XII</th>
+
+</tr>
+
+
+<tr>
+
+<td>Monday</td>
+
+<td>Math</td>
+
+<td>English</td>
+
+<td>Physical Science</td>
+
+<td>Math</td>
+
+</tr>
+
+
+<tr>
+
+<td>Tuesday</td>
+
+<td>English</td>
+
+<td>Math</td>
+
+<td>Life Science</td>
+
+<td>English</td>
+
+</tr>
+
+
+<tr>
+
+<td>Wednesday</td>
+
+<td>Bengali</td>
+
+<td>Science</td>
+
+<td>Math</td>
+
+<td>Science</td>
+
+</tr>
+
+
+<tr>
+
+<td>Thursday</td>
+
+<td>Math</td>
+
+<td>Bengali</td>
+
+<td>English</td>
+
+<td>Math</td>
+
+</tr>
+
+
+<tr>
+
+<td>Friday</td>
+
+<td>Science</td>
+
+<td>Math</td>
+
+<td>Bengali</td>
+
+<td>English</td>
+
+</tr>
+
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMISSION
+===================================================== -->
+
+<section class="admission-section" id="admission">
+
+<div class="heading">
+
+<small>Admission</small>
+
+<h2>Online Admission</h2>
+
+<p>
+Submit your admission enquiry using the form below.
+</p>
+
+</div>
+
+
+<div class="admission">
+
+<div class="form-title">
+
+<h3>📝 Student Admission Form</h3>
+
+<p>
+Please enter correct student information.
+</p>
+
+</div>
+
+
+<form id="admissionForm">
+
+
+<div class="row">
+
+<div class="field">
+
+<label>Student Name *</label>
+
+<input
+id="studentName"
+type="text"
+placeholder="Enter student name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Guardian Name *</label>
+
+<input
+id="guardianName"
+type="text"
+placeholder="Enter guardian name"
+required>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>Mobile Number *</label>
+
+<input
+id="mobile"
+type="tel"
+maxlength="10"
+pattern="[0-9]{10}"
+placeholder="10 digit mobile number"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Date of Birth</label>
+
+<input
+id="dob"
+type="date">
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>Class *</label>
+
+<select id="className" required>
+
+<option value="">
+Select Class
+</option>
+
+<option>Class V</option>
+<option>Class VI</option>
+<option>Class VII</option>
+<option>Class VIII</option>
+<option>Class IX</option>
+<option>Class X</option>
+<option>Class XI</option>
+<option>Class XII</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Course *</label>
+
+<select id="course" required>
+
+<option value="">
+Select Course
+</option>
+
+<option>Mathematics</option>
+<option>Physical Science</option>
+<option>Life Science</option>
+<option>English</option>
+<option>Bengali</option>
+<option>All Subjects</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>Address *</label>
+
+<textarea
+id="address"
+placeholder="Enter student address"
+required></textarea>
+
+</div>
+
+
+<button
+class="submit"
+type="submit">
+
+🚀 Submit Admission Enquiry
+
+</button>
+
+
+</form>
+
+
+<div id="success">
+
+✅ <b>Admission Enquiry Submitted!</b>
+
+<br><br>
+
+Your enquiry has been received successfully.
+
+<br><br>
+
+📞 Please contact:
+<b>8348813875</b>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info-box" id="eligibility">
+
+<h4>Eligibility</h4>
+
+<p>
+Students from Class V to XII.
+</p>
+
+</div>
+
+
+<div class="info-box" id="fees">
+
+<h4>Course Fees</h4>
+
+<p>
+Contact the center for current fee details.
+</p>
+
+</div>
+
+
+<div class="info-box" id="documents">
+
+<h4>Documents</h4>
+
+<p>
+Student and guardian information required.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section>
+
+<div class="heading">
+
+<small>Gallery</small>
+
+<h2>Our Learning Environment</h2>
+
+<p>
+A visual section for coaching center activities and events.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=700&q=80">
+
+<div class="gallery-caption">
+Learning Environment
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80">
+
+<div class="gallery-caption">
+Student Learning
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=700&q=80">
+
+<div class="gallery-caption">
+Education & Growth
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80">
+
+<div class="gallery-caption">
+Students & Education
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="testimonial-section">
+
+<div class="heading">
+
+<small>Testimonials</small>
+
+<h2>What Students & Parents Say</h2>
+
+<p>
+Demo testimonial section — replace with real reviews later.
+</p>
+
+</div>
+
+
+<div class="testimonial-grid">
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Very friendly learning environment and easy-to-understand explanations.”
+</p>
+
+<h4>— Student</h4>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Regular practice and academic guidance help students stay focused.”
+</p>
+
+<h4>— Parent</h4>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“A simple and comfortable place for students to learn and improve.”
+</p>
+
+<h4>— Student</h4>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section>
+
+<div class="heading">
+
+<small>FAQ</small>
+
+<h2>Frequently Asked Questions</h2>
+
+<p>
+Quick answers to common admission questions.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Which classes are available?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Classes V to XII are shown on the website.
+Contact the center for current batch availability.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How can I apply?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+You can use the Online Admission form on this website
+or call 8348813875.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Which subjects are available?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Mathematics, Physical Science, Life Science, English,
+Bengali and All Subjects are listed.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How can I know the course fee?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Contact Gourob Coaching Center directly for the current fee details.
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact-section" id="contact">
+
+<div class="heading">
+
+<small>Contact</small>
+
+<h2>Get In Touch</h2>
+
+<p>
+For admission information and enquiries, contact us.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-box" id="location">
+
+<div class="contact-icon">
+📍
+</div>
+
+<h3>Location</h3>
+
+<p>
+Khargram, Murshidabad, West Bengal
+</p>
+
+</div>
+
+
+<div class="contact-box" id="phone">
+
+<div class="contact-icon">
+📞
+</div>
+
+<h3>Phone</h3>
+
+<p>
+8348813875
+</p>
+
+</div>
+
+
+<div class="contact-box" id="help">
+
+<div class="contact-icon">
+📝
+</div>
+
+<h3>Admission Help</h3>
+
+<p>
+Call for admission information.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+
+Gourob
+<span>Coaching Center</span>
+
+</div>
+
+<p>
+Quality education, clear concepts and
+student-focused learning.
+</p>
+
+<p style="margin-top:10px;">
+📍 Khargram, Murshidabad
+</p>
+
+<p>
+📞 8348813875
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul class="footer-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#courses">Courses</a></li>
+
+<li><a href="#admission">Admission</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>Courses</h3>
+
+<ul class="footer-links">
+
+<li><a href="#math">Mathematics</a></li>
+
+<li><a href="#physical">Physical Science</a></li>
+
+<li><a href="#life">Life Science</a></li>
+
+<li><a href="#english">English</a></li>
+
+<li><a href="#bengali">Bengali</a></li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Gourob Coaching Center
+
+<br>
+
+Khargram, Murshidabad • All Rights Reserved
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING CONTACT BUTTONS
+===================================================== -->
+
+<div class="floating">
+
+<a
+class="float-btn call"
+href="tel:8348813875"
+title="Call">
+
+📞
+
+</a>
+
+
+<a
+class="float-btn whatsapp"
+href="https://wa.me/918348813875"
+target="_blank"
+title="WhatsApp">
+
+💬
+
+</a>
+
+</div>
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+↑
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ADMISSION FORM
+===================================================== */
+
+document
+.getElementById("admissionForm")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+
+let name =
+document.getElementById("studentName").value;
+
+let mobile =
+document.getElementById("mobile").value;
+
+let className =
+document.getElementById("className").value;
+
+let course =
+document.getElementById("course").value;
+
+
+/* Generate demo Application ID */
+
+let appId =
+"GCC-" +
+new Date().getTime().toString().slice(-6);
+
+
+/* Success */
+
+document
+.getElementById("success")
+.innerHTML =
+
+"✅ <b>Admission Enquiry Submitted!</b>" +
+
+"<br><br>" +
+
+"Student: <b>" +
+name +
+"</b>" +
+
+"<br>" +
+
+"Class: <b>" +
+className +
+"</b>" +
+
+"<br>" +
+
+"Course: <b>" +
+course +
+"</b>" +
+
+"<br><br>" +
+
+"Application ID: <b>" +
+appId +
+"</b>" +
+
+"<br><br>" +
+
+"📞 Contact: <b>8348813875</b>";
+
+
+document
+.getElementById("success")
+.style.display="block";
+
+
+/* Save demo data in browser */
+
+let records =
+JSON.parse(
+localStorage.getItem("gccAdmissions") || "[]"
+);
+
+
+records.push({
+
+id:appId,
+
+name:name,
+
+mobile:mobile,
+
+className:className,
+
+course:course,
+
+date:new Date().toLocaleDateString()
+
+});
+
+
+localStorage.setItem(
+"gccAdmissions",
+JSON.stringify(records)
+);
+
+
+/* Reset */
+
+this.reset();
+
+
+document
+.getElementById("success")
+.scrollIntoView({
+
+behavior:"smooth",
+
+block:"center"
+
+});
+
+});
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(function(button){
+
+button.addEventListener("click",function(){
+
+let item =
+this.parentElement;
+
+item.classList.toggle("active");
+
+
+let symbol =
+this.querySelector("span");
+
+
+if(
+item.classList.contains("active")
+){
+
+symbol.innerText="−";
+
+}else{
+
+symbol.innerText="+";
+
+}
+
+});
+
+});
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+let topBtn =
+document.getElementById("topBtn");
+
+
+window.addEventListener("scroll",function(){
+
+if(window.scrollY > 500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+
+topBtn.addEventListener("click",function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+</script>
+
+
+</body>
+</html>
+```
